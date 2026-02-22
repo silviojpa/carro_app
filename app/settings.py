@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-mjb$t$rh$2(x3mc37s-_ij*l!8%-8h-vq85ei8$()486bu=)9x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Permitir acesso na rede em nuvem
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
