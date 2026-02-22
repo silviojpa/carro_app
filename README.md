@@ -2,3 +2,7 @@
 
 
 # Dica - habilitar a port 8000 no security group na regra inbound com TCP
+
+# Permitir acesso na rede em nuvem
+ALLOWED_HOSTS = ['*']
+python3 manage.py migrate
