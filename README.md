@@ -5,12 +5,13 @@ Este repositório documenta o processo de deploy da aplicação Django "Carro Ap
 <img width="448" height="611" alt="image" src="https://github.com/user-attachments/assets/f6fbc616-9529-4787-b364-389a84deca32" />
 
 ## Ferramentas necessárias:
--SO -> De preferencia Linux
--Banco de Dados -> Tabela estruturada SQL
--Repositório Git
--Ambiente Python e uWSGI
--Servidor Web (Nginx)
--Provide AWS
+
+* SO -> De preferencia Linux
+* Banco de Dados -> Tabela estruturada SQL
+* Repositório Git
+* Ambiente Python e uWSGI
+* Servidor Web (Nginx)
+* Provide AWS
 --------------
 Fluxiograma 
 <img width="915" height="368" alt="image" src="https://github.com/user-attachments/assets/686975fb-4bd3-45cf-b39a-fc349b3c0535" />
@@ -47,7 +48,7 @@ DATABASES = {
 }
 ```
 
-🔑 2. Autenticação e Git (SSH)
+## 🔑 2. Autenticação e Git (SSH)
 Geração de chaves para deploy seguro e integração com GitHub para os usuários `ubuntu` e `root`.
 
 ```Bash
@@ -65,7 +66,7 @@ cat ~/.ssh/id_ed25519.pub
 ssh -T git@github.com
 ```
 
-🐍 3. Ambiente Python e uWSGI
+## 🐍 3. Ambiente Python e uWSGI
 Isolamento do projeto e instalação do servidor de aplicação.
 
 ```Bash
@@ -112,7 +113,7 @@ sudo apt install python3-pip
 - uwsgi --ini carros_uwsgi.ini
 
 
-🌐 4. Servidor Web (Nginx)
+## 🌐 4. Servidor Web (Nginx)
 Configuração do proxy reverso para gerenciar tráfego e arquivos estáticos.
 
 Arquivo: `nano /etc/nginx/sites-available/carros.conf`
@@ -144,7 +145,7 @@ server {
 }
 ````
 
-⚙️ 5. Automação de Inicialização (Systemd)
+## ⚙️ 5. Automação de Inicialização (Systemd)
 Criação do serviço para garantir que a aplicação suba automaticamente com o servidor Linux.
 
 Arquivo: nano/etc/systemd/system/carros.service
