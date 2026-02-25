@@ -72,9 +72,6 @@ ssh -T git@github.com
 Isolamento do projeto e instalação do servidor de aplicação.
 
 ```Bash
-# Dependências do sistema
-sudo apt install build-essential python3-dev python3-venv python3-pip
-
 # Configuração da venv e pacotes
 cd /var/www/carro_app
 python3 -m venv venv
@@ -146,6 +143,16 @@ server {
     }
 }
 ````
+## OBS: Rodar na porta 80, muda de 8000 para 80; no arquivo carros.conf
+- Comando para link simbólico do Nginx:
+* sudo ln -s /etc/nginx/sites-available/carros.conf /etc/nginx/sites-enabled/
+
+- Comando para coletar arquivos estáticos no Django:
+* python manage.py collectstatic
+
+- Comando para reiniciar o Nginx:
+* sudo /etc/init.d/nginx restart
+
 
 ## ⚙️ 5. Automação de Inicialização (Systemd)
 Criação do serviço para garantir que a aplicação suba automaticamente com o servidor Linux.
