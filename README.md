@@ -146,13 +146,13 @@ server {
 ````
 
 - Comando para link simbólico do Nginx:
-sudo ln -s /etc/nginx/sites-available/carros.conf /etc/nginx/sites-enabled/
+1. sudo ln -s /etc/nginx/sites-available/carros.conf /etc/nginx/sites-enabled/
 
 - Comando para coletar arquivos estáticos no Django:
-python manage.py collectstatic
+2. python manage.py collectstatic
 
 - Comando para reiniciar o Nginx:
-sudo /etc/init.d/nginx restart
+3. sudo /etc/init.d/nginx restart
 
 
 ## ⚙️ 5. Automação de Inicialização (Systemd)
