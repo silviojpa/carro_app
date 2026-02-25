@@ -4,7 +4,7 @@ Este repositório documenta o processo de deploy da aplicação Django "Carro Ap
 ## Projeto:
 <img width="448" height="611" alt="image" src="https://github.com/user-attachments/assets/f6fbc616-9529-4787-b364-389a84deca32" />
 
-Ferramentas necessárias:
+## Ferramentas necessárias:
 -SO -> De preferencia Linux
 -Banco de Dados -> Tabela estruturada SQL
 -Repositório Git
