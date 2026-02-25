@@ -13,8 +13,9 @@ Este repositório documenta o processo de deploy da aplicação Django "Carro Ap
 * Servidor Web (Nginx)
 * Provide AWS
 --------------
-Fluxiograma 
+## Request and Response
 <img width="915" height="368" alt="image" src="https://github.com/user-attachments/assets/686975fb-4bd3-45cf-b39a-fc349b3c0535" />
+## Fluxiograma
 <img width="800" height="465" alt="image" src="https://github.com/user-attachments/assets/32df8c9c-6142-43f3-bc30-16b82f9ecefb" />
 
 ## 🛠️ 1. Banco de Dados (PostgreSQL)
