@@ -4,12 +4,12 @@ Este repositório documenta o processo de deploy da aplicação Django "Carro Ap
 ## Projeto:
 <img width="448" height="611" alt="image" src="https://github.com/user-attachments/assets/f6fbc616-9529-4787-b364-389a84deca32" />
 Ferramentas necessárias:
-- SO -> De preferencia Linux
-- Banco de Dados -> Tabela estruturada SQL
-- Repositório Git
-- Ambiente Python e uWSGI
-- Servidor Web (Nginx)
-- Provide AWS
+-SO -> De preferencia Linux
+-Banco de Dados -> Tabela estruturada SQL
+-Repositório Git
+-Ambiente Python e uWSGI
+-Servidor Web (Nginx)
+-Provide AWS
 ---
 Fluxiograma 
 <img width="915" height="368" alt="image" src="https://github.com/user-attachments/assets/686975fb-4bd3-45cf-b39a-fc349b3c0535" />
@@ -31,6 +31,7 @@ sudo -u postgres psql
 CREATE DATABASE carros;
 ALTER USER postgres WITH PASSWORD '1989';
 ```
+
 ```Python
 Configuração Django (settings.py)
 DATABASES = {
@@ -46,6 +47,8 @@ DATABASES = {
 ```
 🔑 2. Autenticação e Git (SSH)
 Geração de chaves para deploy seguro e integração com GitHub para os usuários `ubuntu` e `root`.
+
+
 ```Bash
 # Gerar chave
 ssh-keygen -t ed25519 -C "seu-email@exemplo.com"
