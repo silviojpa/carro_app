@@ -15,6 +15,7 @@ Este repositório documenta o processo de deploy da aplicação Django "Carro Ap
 --------------
 ## Request and Response
 <img width="915" height="368" alt="image" src="https://github.com/user-attachments/assets/686975fb-4bd3-45cf-b39a-fc349b3c0535" />
+
 ## Fluxiograma
 <img width="800" height="465" alt="image" src="https://github.com/user-attachments/assets/32df8c9c-6142-43f3-bc30-16b82f9ecefb" />
 
@@ -92,23 +93,23 @@ sudo apt install python3-pip
 ````
 
 ## Instalação da venv
-1- python3 -m venv venv
-2- source venv/bin/activate
-3- pip install -r requirements.txt
+* python3 -m venv venv
+* source venv/bin/activate
+* pip install -r requirements.txt
 
 # ----------- Instalação de modulo -----------
 ## Aplication server -> Faz o papel de tradutor entre o python com appweb
 - Comando para instalar uWsgi:
-1- pip install uwsgi
+* pip install uwsgi
 
 - Comando para rodar uWsgi:
-1 -uwsgi --http :8000 --module app.wsgi --chmod-socket=666
+* uwsgi --http :8000 --module app.wsgi --chmod-socket=666
 # coração da apalicação (app.wsgi) wsgi é arquivo wsgi.py
-2- --chmod-socket=666 -> permissões para executar socket sem restrição
+* --chmod-socket=666 -> permissões para executar socket sem restrição
 
 ## Comando para subir uWsgi com socket:
-1- source venv/bin/activate
-2- uwsgi --socket /var/www/carro_app/carros.sock --module app.wsgi --chmod-socket=666
+* source venv/bin/activate
+*  uwsgi --socket /var/www/carro_app/carros.sock --module app.wsgi --chmod-socket=666
 
 ## Comando para subir o uWsgi como ini:
 - uwsgi --ini carros_uwsgi.ini
