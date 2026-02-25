@@ -113,6 +113,7 @@ sudo apt install python3-pip
 
 
 ## 🌐 4. Servidor Web (Nginx)
+## OBS: Rodar na porta 80, muda de 8000 para 80; no arquivo carros.conf
 Configuração do proxy reverso para gerenciar tráfego e arquivos estáticos.
 
 Arquivo: `nano /etc/nginx/sites-available/carros.conf`
@@ -143,15 +144,15 @@ server {
     }
 }
 ````
-## OBS: Rodar na porta 80, muda de 8000 para 80; no arquivo carros.conf
+
 - Comando para link simbólico do Nginx:
-* sudo ln -s /etc/nginx/sites-available/carros.conf /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/carros.conf /etc/nginx/sites-enabled/
 
 - Comando para coletar arquivos estáticos no Django:
-* python manage.py collectstatic
+python manage.py collectstatic
 
 - Comando para reiniciar o Nginx:
-* sudo /etc/init.d/nginx restart
+sudo /etc/init.d/nginx restart
 
 
 ## ⚙️ 5. Automação de Inicialização (Systemd)
