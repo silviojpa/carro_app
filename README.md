@@ -104,7 +104,7 @@ sudo apt install python3-pip
 
 - Comando para rodar uWsgi:
 * uwsgi --http :8000 --module app.wsgi --chmod-socket=666
-# coração da apalicação (app.wsgi) wsgi é arquivo wsgi.py
+# coração da aplicação (app.wsgi) wsgi é arquivo wsgi.py
 * --chmod-socket=666 -> permissões para executar socket sem restrição
 
 ## Comando para subir uWsgi com socket:
