@@ -1,6 +1,6 @@
 # 🚗 Carro App - Deploy Profissional na AWS EC2
 Este repositório documenta o processo de deploy da aplicação Django "Carro App" em uma infraestrutura AWS, utilizando servidores de alto desempenho (Nginx e uWSGI) e banco de dados PostgreSQL.
----
+------------
 ## Projeto:
 <img width="448" height="611" alt="image" src="https://github.com/user-attachments/assets/f6fbc616-9529-4787-b364-389a84deca32" />
 Ferramentas necessárias:
@@ -10,7 +10,7 @@ Ferramentas necessárias:
 -Ambiente Python e uWSGI
 -Servidor Web (Nginx)
 -Provide AWS
----
+--------------
 Fluxiograma 
 <img width="915" height="368" alt="image" src="https://github.com/user-attachments/assets/686975fb-4bd3-45cf-b39a-fc349b3c0535" />
 <img width="800" height="465" alt="image" src="https://github.com/user-attachments/assets/32df8c9c-6142-43f3-bc30-16b82f9ecefb" />
@@ -207,6 +207,36 @@ source venv/bin/activate
 pip install -r requirements.txt
 pip install uwsgi
 ```
+-------------- Intalação das independências do python --------------------
+Comandos para instalar dependências e ferramentas do Python:
+
+sudo apt install build-essential python3
+sudo apt install python3-dev
+sudo apt install python3-venv
+sudo apt install python3-pip
+
+Instalação da venv
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+----------- Instalação de modulo -----------
+aplication server -> Faz o papel de tradutor entre o python com appweb
+Comando para instalar uWsgi:
+pip install uwsgi
+
+Comando para rodar uWsgi:
+uwsgi --http :8000 --module app.wsgi --chmod-socket=666
+# coração da palicação (app.wsgi) wsgi é arquivo wsgi.py
+# --chmod-socket=666 -> permissões para executar socket sem restrição
+
+Comando para subir uWsgi com socket:
+source venv/bin/activate
+uwsgi --socket /var/www/carro_app/carros.sock --module app.wsgi --chmod-socket=666
+
+Comando para subir o uWsgi como ini:
+uwsgi --ini carros_uwsgi.ini
+
 
 🌐 4. Servidor Web (Nginx)
 Configuração do proxy reverso para gerenciar tráfego e arquivos estáticos.
