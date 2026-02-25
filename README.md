@@ -154,6 +154,8 @@ server {
 - Comando para reiniciar o Nginx:
 3. sudo /etc/init.d/nginx restart
 
+- Comando para subir uWsgi com socket:
+4. uwsgi --socket /var/www/carros/carros.sock --module app.wsgi --chmod-socket=666
 
 ## ⚙️ 5. Automação de Inicialização (Systemd)
 Criação do serviço para garantir que a aplicação suba automaticamente com o servidor Linux.
